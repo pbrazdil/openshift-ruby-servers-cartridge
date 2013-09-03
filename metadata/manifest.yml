@@ -2,8 +2,7 @@
 Name: ruby
 Cartridge-Short-Name: RUBY
 Display-Name: Ruby 2.0
-Description: Ruby is a dynamic, reflective, general-purpose object-oriented programming
-  language. Popular development frameworks include Ruby on Rails and Sinatra.
+Description: Ruby cartridge with additional support for many servers.
 Version: '2.0'
 Versions:
 - '2.0'
@@ -14,7 +13,7 @@ Cartridge-Version: 0.0.6
 Compatible-Versions:
 - 0.0.4
 - 0.0.5
-Cartridge-Vendor: redhat
+Cartridge-Vendor: pbrazdil
 Categories:
 - service
 - ruby
