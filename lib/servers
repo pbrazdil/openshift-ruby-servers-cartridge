@@ -1,5 +1,5 @@
-function server_name() {
-	
-
+function server_name {
+	# to be implemented
+	return 0
 }
 
