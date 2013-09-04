@@ -11,16 +11,12 @@ esac
 source "${OPENSHIFT_RUBY_DIR}/lib/util"
 parse_args $@
 
-version="1.9-scl" #FIX: additional param needs to be added, solve properly
-
 # Copy the version specific files to ruby directory
 shopt -s dotglob
 for dir in etc; do
     mkdir -p $OPENSHIFT_RUBY_DIR/$dir
     cp -Lr $OPENSHIFT_RUBY_DIR/versions/$version/$dir/* $OPENSHIFT_RUBY_DIR/$dir 
 done
-
-version="1.9"
 
 if [ $version == '1.9' ]; then
     # Cleanup from version 0.0.1
