@@ -1,0 +1,3 @@
+#!/bin/bash -e
+
+bundle exec 'puma --config ${OPENSHIFT_REPO_DIR}/conf/config.rb &> ${OPENSHIFT_DIY_DIR}/logs/boot.log'

@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+update_httpd_passenv $HTTPD_CFG_FILE
+ensure_valid_httpd_process "$HTTPD_PID_FILE" "$HTTPD_CFG_FILE"
+ruby_context "/usr/sbin/httpd -C 'Include $OPENSHIFT_RUBY_DIR/etc/conf.d/*.conf' -f $HTTPD_CFG_FILE -k start"

@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+if [ -d ${OPENSHIFT_DIY_DIR}run/puma.state ]
+then
+    bundle exec 'pumactl --state "${OPENSHIFT_DIY_DIR}run/puma.state" stop'
+fi
