@@ -11,19 +11,21 @@ HTTPD_PID_FILE=$OPENSHIFT_RUBY_DIR/run/httpd.pid
 function start() {
     echo "Starting Ruby cartridge"
     
-    if marker_present "puma"
-    then
-      client_result "puma present!"
-    else
-      client_result "no puma :("
-    fi
+    # if marker_present "puma"
+    # then
+    #   client_result "puma present!"
+    # else
+    #   client_result "no puma :("
+    # fi
 
-    pushd ${OPENSHIFT_REPO_DIR} > /dev/null
-    bundle exec 'puma --config ${OPENSHIFT_RUBY_DIR}/server/puma/config.rb &> ${OPENSHIFT_RUBY_DIR}/logs/boot.log'
+  #  pushd ${OPENSHIFT_REPO_DIR} > /dev/null
+  #  bundle exec 'puma --config ${OPENSHIFT_RUBY_DIR}/server/puma/config.rb &> ${OPENSHIFT_RUBY_DIR}/logs/boot.log'
 
-    #update_httpd_passenv $HTTPD_CFG_FILE
-    #ensure_valid_httpd_process "$HTTPD_PID_FILE" "$HTTPD_CFG_FILE"
-    #ruby_context "/usr/sbin/httpd -C 'Include $OPENSHIFT_RUBY_DIR/etc/conf.d/*.conf' -f $HTTPD_CFG_FILE -k start"
+    # update_httpd_passenv $HTTPD_CFG_FILE
+    # ensure_valid_httpd_process "$HTTPD_PID_FILE" "$HTTPD_CFG_FILE"
+    # ruby_context "/usr/sbin/httpd -C 'Include $OPENSHIFT_RUBY_DIR/etc/conf.d/*.conf' -f $HTTPD_CFG_FILE -k start"
+
+    exit 0
 }
 
 function stop() {
