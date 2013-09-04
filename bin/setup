@@ -5,7 +5,7 @@ case "$1" in
     version="$2"
 esac
 
-version='1.9-scl'
+version="1.9-scl"
 
 # Parse arguments
 source "${OPENSHIFT_RUBY_DIR}/lib/util"
@@ -18,7 +18,7 @@ for dir in etc; do
     cp -Lr $OPENSHIFT_RUBY_DIR/versions/$version/$dir/* $OPENSHIFT_RUBY_DIR/$dir 
 done
 
-version='1.9'
+version="1.9"
 
 if [ $version == '1.9' ]; then
     # Cleanup from version 0.0.1
