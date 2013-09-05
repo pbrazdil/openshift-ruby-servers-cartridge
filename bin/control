@@ -36,8 +36,8 @@ function restart() {
     # ensure_httpd_restart_succeed "$HTTPD_PID_FILE" "$HTTPD_CFG_FILE"
     # ruby_context "/usr/sbin/httpd -C 'Include $OPENSHIFT_RUBY_DIR/etc/conf.d/*.conf' -f $HTTPD_CFG_FILE -k restart"
 
-    source "${OPESNHIFT_RUBY_DIR}/servers/puma/control/stop"    
-    source "${OPESNHIFT_RUBY_DIR}/servers/puma/control/start"    
+    # source "${OPESNHIFT_RUBY_DIR}/servers/${OPENSHIFT_RUBY_SERVER}/control/stop"    
+    # source "${OPESNHIFT_RUBY_DIR}/servers/puma/control/start"    
 
 
 }

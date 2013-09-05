@@ -5,5 +5,8 @@
 # then
 # 	bundle exec 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb &> ${OPENSHIFT_RUBY_DIR}/logs/boot.log'
 # else
-	ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
+
+source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
+
+ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
 # fi
