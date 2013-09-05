@@ -32,4 +32,6 @@ fi
 
 #installing additional servers
 
-gem install puma --no-rdoc --no-ri
+source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
+
+ruby_context 'gem install puma --no-rdoc --no-ri'

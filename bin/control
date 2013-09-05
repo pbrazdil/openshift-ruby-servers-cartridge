@@ -124,8 +124,6 @@ function deploy() {
     then
       echo "Precompiling with 'bundle exec rake assets:precompile'"
       ruby_context "bundle exec rake assets:precompile"
-      echo `ruby -v`
-      echo `ruby_context 'ruby -v'`
     fi
   fi
   popd > /dev/null
