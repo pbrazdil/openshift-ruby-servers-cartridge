@@ -5,5 +5,5 @@ if [ -f ${OPENSHIFT_REPO_DIR}/Gemfile ]
 then
 	bundle exec 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb &> ${OPENSHIFT_RUBY_DIR}/logs/boot.log'
 else
-	puma --config ${OPENSHIFT_REPO_DIR}/conf/config.rb &> ${OPENSHIFT_DIY_DIR}/logs/boot.log
+	puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb &> ${OPENSHIFT_RUBY_DIR}/logs/boot.log
 fi
