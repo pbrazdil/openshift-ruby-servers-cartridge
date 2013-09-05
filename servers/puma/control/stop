@@ -1,8 +1,11 @@
 #!/bin/bash -e
 
 source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
+pushd $OPENSHIFT_REPO_DIR
 
 if [ -d ${OPENSHIFT_DIY_DIR}run/puma.state ]
 then
     ruby_context 'pumactl --state "${OPENSHIFT_DIY_DIR}run/puma.state" stop'
 fi
+
+popd
