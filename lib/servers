@@ -1,4 +1,6 @@
-function server_name {
+#!/bin/bash
+
+function get_server_name {
 	# to be implemented
 	return 0
 }

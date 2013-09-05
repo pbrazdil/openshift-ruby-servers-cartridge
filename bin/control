@@ -8,10 +8,12 @@ source "${OPENSHIFT_RUBY_DIR}/lib/servers"
 HTTPD_CFG_FILE=$OPENSHIFT_RUBY_DIR/etc/conf/httpd_nolog.conf
 HTTPD_PID_FILE=$OPENSHIFT_RUBY_DIR/run/httpd.pid
 
+$server = "puma" # get_server_name
+
 function start() {
     echo "Starting Ruby cartridge"
     
-    #${OPENSHIFT_RUBY_DIR}/servers/puma/control/start    
+    ${OPENSHIFT_RUBY_DIR}/servers/$server/control/start    
 }
 
 function stop() {
@@ -23,7 +25,7 @@ function stop() {
     # ruby_context "/usr/sbin/httpd -C 'Include $OPENSHIFT_RUBY_DIR/etc/conf.d/*.conf' -f $HTTPD_CFG_FILE -k stop"
     # wait_for_stop $httpd_pid
 
-    #${OPESNHIFT_RUBY_DIR}/servers/puma/control/stop    
+    ${OPESNHIFT_RUBY_DIR}/servers/$server/control/stop    
 
 }
 
