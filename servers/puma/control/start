@@ -2,5 +2,4 @@
 source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context" # ?
 
 
-ruby_context 'ruby -v'
-ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
+#ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
