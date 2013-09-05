@@ -11,7 +11,7 @@ HTTPD_PID_FILE=$OPENSHIFT_RUBY_DIR/run/httpd.pid
 function start() {
     echo "Starting Ruby cartridge"
     
-    source "${OPESNHIFT_RUBY_DIR}/servers/puma/control/start"    
+    source "${OPENSHIFT_RUBY_DIR}/servers/puma/control/start"    
 }
 
 function stop() {
