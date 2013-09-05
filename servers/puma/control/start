@@ -1,13 +1,7 @@
 #!/bin/bash -e
 
-
-# if [ -f ${OPENSHIFT_REPO_DIR}/Gemfile ]
-# then
-# 	bundle exec 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb &> ${OPENSHIFT_RUBY_DIR}/logs/boot.log'
-# else
-
 source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
-pushd $OPENSHIFT_REPO_DIR
+
+# pushd $OPENSHIFT_REPO_DIR
 ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
-popd
-# fi
+# popd

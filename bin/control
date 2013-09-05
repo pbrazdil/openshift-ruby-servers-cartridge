@@ -13,7 +13,9 @@ server="puma" # get_server_name
 function start() {
     echo "Starting Ruby cartridge"
     
-    ${OPENSHIFT_RUBY_DIR}/servers/$server/control/start    
+    pushd $OPENSHIFT_REPO_DIR
+    ${OPENSHIFT_RUBY_DIR}/servers/$server/control/start
+    popd    
 }
 
 function stop() {
@@ -24,8 +26,11 @@ function stop() {
     # fi
     # ruby_context "/usr/sbin/httpd -C 'Include $OPENSHIFT_RUBY_DIR/etc/conf.d/*.conf' -f $HTTPD_CFG_FILE -k stop"
     # wait_for_stop $httpd_pid
+    
 
-    ${OPESNHIFT_RUBY_DIR}/servers/$server/control/stop    
+    pushd $OPENSHIFT_REPO_DIR
+    ${OPESNHIFT_RUBY_DIR}/servers/$server/control/stop 
+    popd   
 
 }
 
