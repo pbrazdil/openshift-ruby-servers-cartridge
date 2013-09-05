@@ -11,7 +11,7 @@ HTTPD_PID_FILE=$OPENSHIFT_RUBY_DIR/run/httpd.pid
 function start() {
     echo "Starting Ruby cartridge"
     
-    source "${OPENSHIFT_RUBY_DIR}/servers/puma/control/start"    
+    ${OPENSHIFT_RUBY_DIR}/servers/puma/control/start    
 }
 
 function stop() {
@@ -23,7 +23,7 @@ function stop() {
     # ruby_context "/usr/sbin/httpd -C 'Include $OPENSHIFT_RUBY_DIR/etc/conf.d/*.conf' -f $HTTPD_CFG_FILE -k stop"
     # wait_for_stop $httpd_pid
 
-    source "${OPESNHIFT_RUBY_DIR}/servers/puma/control/stop"    
+    ${OPESNHIFT_RUBY_DIR}/servers/puma/control/stop    
 
 }
 
