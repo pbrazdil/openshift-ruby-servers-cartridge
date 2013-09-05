@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+source "${OPENSHIFT_RUBY_DIR}/lib/util"
+source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
+
 ensure_valid_httpd_process "$HTTPD_PID_FILE" "$HTTPD_CFG_FILE"
 if [ -f "$HTTPD_PID_FILE" ]; then
 	httpd_pid=`cat "$HTTPD_PID_FILE" 2> /dev/null`

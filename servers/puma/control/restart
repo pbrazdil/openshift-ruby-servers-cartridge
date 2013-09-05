@@ -4,5 +4,5 @@ source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
 
 if [ -d ${OPENSHIFT_DIY_DIR}run/puma.state ]
 then
-    ruby_context 'pumactl --state "${OPENSHIFT_DIY_DIR}run/puma.state" stop'
+    ruby_context 'pumactl --state "${OPENSHIFT_DIY_DIR}run/puma.state" restart'
 fi

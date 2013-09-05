@@ -1,7 +1,4 @@
 #!/bin/bash -e
+source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context" # ?
 
-source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
-
-# pushd $OPENSHIFT_REPO_DIR
 ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
-# popd
