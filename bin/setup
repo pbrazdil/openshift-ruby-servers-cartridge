@@ -28,10 +28,3 @@ if [ $version == '1.9' ]; then
     scl enable ruby193 "printenv LD_LIBRARY_PATH" > $OPENSHIFT_RUBY_DIR/env/LD_LIBRARY_PATH
     scl enable ruby193 "printenv MANPATH"         > $OPENSHIFT_RUBY_DIR/env/MANPATH
 fi
-
-
-#installing additional servers
-
-source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
-
-gem install puma --no-rdoc --no-ri
