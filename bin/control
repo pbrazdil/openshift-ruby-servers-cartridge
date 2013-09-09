@@ -38,6 +38,8 @@ function stop() {
 
 function restart() {
     echo "${1}ing Ruby cart"
+
+    #TODO check if server is changed or not
     
     pushd $OPENSHIFT_REPO_DIR 1>/dev/null
     ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/control/restart 

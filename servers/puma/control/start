@@ -1,5 +1,9 @@
 #!/bin/bash -e
 source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context" # ?
 
-
-ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
+if [ -f ${OPENSHIFT_REPO_DIR}/Gemfile ]
+then
+	ruby_context 'bundle exec "puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb"'
+else
+	ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
+fi
