@@ -11,14 +11,14 @@ HTTPD_PID_FILE=$OPENSHIFT_RUBY_DIR/run/httpd.pid
 function start() {
     echo "Starting Ruby cartridge"
     
-    if ! is_server_installed $OPENSHIFT_SERVER
-    then
-      ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/install
-    fi
+    # if ! is_server_installed $OPENSHIFT_SERVER
+    # then
+    #   ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/install
+    # fi
 
-    pushd $OPENSHIFT_REPO_DIR 1>/dev/null
-    ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/control/start
-    popd 1>/dev/null    
+    # pushd $OPENSHIFT_REPO_DIR 1>/dev/null
+    # ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/control/start
+    # popd 1>/dev/null    
 }
 
 function stop() {
