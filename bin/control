@@ -10,6 +10,8 @@ source "${OPENSHIFT_RUBY_DIR}/lib/servers"
 function start() {
     echo "Starting Ruby cartridge using ${OPENSHIFT_SERVER} webserver."
   
+    client_result "test"
+
     if ! is_server_installed $OPENSHIFT_SERVER
     then
       echo "Installing ${OPENSHIFT_SERVER} ..."
