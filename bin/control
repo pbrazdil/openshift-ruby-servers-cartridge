@@ -10,6 +10,8 @@ then
   OPENSHIFT_SERVER=passenger
 fi
 
+OPENSHIFT_SERVER=passenger
+
 function start() {
     echo "Starting Ruby cartridge using ${OPENSHIFT_SERVER} webserver."
   
