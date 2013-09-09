@@ -3,6 +3,7 @@
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 source "${OPENSHIFT_RUBY_DIR}/lib/util"
 source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
+source "${OPENSHIFT_RUBY_DIR}/servers/passenger/env_variables"
 
 update_httpd_passenv $HTTPD_CFG_FILE
 ensure_valid_httpd_process "$HTTPD_PID_FILE" "$HTTPD_CFG_FILE"
