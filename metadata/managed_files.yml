@@ -1,7 +1,7 @@
 ---
 locked_files:
-# - bin/
-# - bin/*
+- bin/
+- bin/*
 - metadata/
 - metadata/*
 - hooks/
@@ -9,7 +9,7 @@ locked_files:
 - etc/
 - etc/conf.d/
 - etc/conf.d/*
-- env/
+#- env/
 - env/OPENSHIFT_RUBY_DIR
 - env/OPENSHIFT_RUBY_LOG_DIR
 - servers/
