@@ -5,13 +5,15 @@ source "${OPENSHIFT_RUBY_DIR}/lib/util"
 source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
 source "${OPENSHIFT_RUBY_DIR}/lib/servers"
 
-
+if ! $OPENSHIFT_SERVER
+then
+  OPENSHIFT_SERVER=passenger
+fi
 
 function start() {
     echo "Starting Ruby cartridge using ${OPENSHIFT_SERVER} webserver."
   
     client_result "Starting ${OPENSHIFT_SERVER}"
-    client_result "ENV ${TEST}"
 
     if ! is_server_installed $OPENSHIFT_SERVER
     then
