@@ -1,7 +1,19 @@
 #!/bin/bash
 
-function get_server_name {
-	# to be implemented
-	return 0
+function is_server_installed {
+	case $1 in
+		"passenger") 
+			;;
+		"puma")
+			gem_exists "$1"
+			;;
+		*)
+			echo "WARN: Unknown \"$1\" server" >&2
+			exit 1
+			;;
+	esac
 }
 
+function gem_exists() {
+	[ "`gem list -i $1`" == "true" ]
+}
