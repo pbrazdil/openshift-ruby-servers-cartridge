@@ -9,7 +9,7 @@ source "${OPENSHIFT_RUBY_DIR}/lib/servers"
 
 function start() {
     echo "Starting Ruby cartridge using ${OPENSHIFT_SERVER} webserver."
-    
+  
     if ! is_server_installed $OPENSHIFT_SERVER
     then
       echo "Installing ${OPENSHIFT_SERVER} ..."
@@ -20,13 +20,15 @@ function start() {
     pushd $OPENSHIFT_REPO_DIR 1>/dev/null
     ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/control/start
     popd 1>/dev/null    
+
+    echo -n "${OPENSHIFT_SERVER}" > $OPENSHIFT_RUBY_DIR/env/OPENSHIFT_SERVER_LATEST_STARTED
 }
 
 function stop() {
     echo "Stopping Ruby cartridge"
 
     pushd $OPENSHIFT_REPO_DIR 1>/dev/null
-    ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/control/stop 
+    ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER_LATEST_STARTED}/control/stop 
     popd 1>/dev/null   
 
 }
