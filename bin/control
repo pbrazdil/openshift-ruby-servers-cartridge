@@ -14,7 +14,7 @@ fi
 function start() {
     echo "Starting Ruby cartridge using ${OPENSHIFT_SERVER} webserver."
   
-    if ! is_server_installed $OPENSHIFT_SERVER
+    if ! is_server_installed $OPENSHIFT_SERVER && ! is_bundler_used
     then
       echo "Installing ${OPENSHIFT_SERVER} ..."
       ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/install

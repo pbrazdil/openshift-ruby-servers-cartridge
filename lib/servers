@@ -6,7 +6,7 @@ function is_server_installed {
 	case $1 in
 		"passenger") 
 			;;
-		"puma"|"thin")
+		"puma"|"thin"|"unicorn")
 			gem_exists "$1"
 			;;
 		*)
@@ -21,11 +21,15 @@ function gem_exists() {
 }
 
 function run_command() {
-	if [ -f ${OPENSHIFT_REPO_DIR}/Gemfile ]
+	if is_bundler_used
 	then
 		ruby_context 'bundle exec "'"$1"'"'
 	else
 		ruby_context "$1"
 	fi
 
+}
+
+function is_bundler_used() {
+	[ -f ${OPENSHIFT_REPO_DIR}/Gemfile ]	
 }
