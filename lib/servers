@@ -25,7 +25,7 @@ function run_command() {
 	then
 		ruby_context 'bundle exec "$1"'
 	else
-		ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
+		ruby_context '$1'
 	fi
 
 }
