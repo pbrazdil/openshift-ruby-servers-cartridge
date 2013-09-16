@@ -29,7 +29,7 @@ function start() {
 }
 
 function stop() {
-    echo "Stopping Ruby cartridge"
+    echo "Stopping ${OPENSHIFT_SERVER_LATEST_STARTED} server"
 
     pushd $OPENSHIFT_REPO_DIR 1>/dev/null
     ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER_LATEST_STARTED}/control/stop 
