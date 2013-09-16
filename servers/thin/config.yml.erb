@@ -1,0 +1,16 @@
+--- 
+address: <%= ENV['OPENSHIFT_RUBY_IP'] %>
+host: <%= ENV['OPENSHIFT_RUBY_PORT'] %>
+pid: <%= ENV['OPENSHIFT_RUBY_DIR'] %>run/server.pid
+timeout: 30
+wait: 30
+log: <%= ENV['OPENSHIFT_RUBY_DIR'] %>logs/server.log
+threads 0, 16
+max_conns: 1024
+require: []
+environment: production
+max_persistent_conns: 512
+servers: 1
+threaded: true
+no-epoll: true
+daemonize: true

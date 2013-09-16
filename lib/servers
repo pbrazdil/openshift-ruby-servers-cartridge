@@ -1,10 +1,12 @@
 #!/bin/bash
+source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
+
 
 function is_server_installed {
 	case $1 in
 		"passenger") 
 			;;
-		"puma")
+		"puma"|"thin")
 			gem_exists "$1"
 			;;
 		*)
@@ -16,4 +18,14 @@ function is_server_installed {
 
 function gem_exists() {
 	[ "`gem list -i $1`" == "true" ]
+}
+
+function run_command() {
+	if [ -f ${OPENSHIFT_REPO_DIR}/Gemfile ]
+	then
+		ruby_context 'bundle exec "$1"'
+	else
+		ruby_context 'puma --config ${OPENSHIFT_RUBY_DIR}/servers/puma/config.rb'
+	fi
+
 }
