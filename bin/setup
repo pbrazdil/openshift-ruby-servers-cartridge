@@ -28,3 +28,7 @@ if [ $version == '1.9' ]; then
     scl enable ruby193 "printenv LD_LIBRARY_PATH" > $OPENSHIFT_RUBY_DIR/env/LD_LIBRARY_PATH
     scl enable ruby193 "printenv MANPATH"         > $OPENSHIFT_RUBY_DIR/env/MANPATH
 fi
+
+echo "${OPENSHIFT_RUBY_DIR}run/server.pid" > $OPENSHIFT_RUBY_DIR/env/OPENSHIFT_SERVER_PID
+echo "${OPENSHIFT_RUBY_DIR}logs/server.log" > $OPENSHIFT_RUBY_DIR/env/OPENSHIFT_SERVER_STDOUT_LOG
+echo "${OPENSHIFT_RUBY_DIR}logs/server.log" > $OPENSHIFT_RUBY_DIR/env/OPENSHIFT_SERVER_STDERR_LOG

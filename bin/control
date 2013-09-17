@@ -7,7 +7,7 @@ source "${OPENSHIFT_RUBY_DIR}/lib/servers"
 
 if [ -z "$OPENSHIFT_SERVER" ]
 then
-  OPENSHIFT_SERVER=passenger
+  OPENSHIFT_SERVER=passenger #by default
 fi
 
 
@@ -141,6 +141,7 @@ function deploy() {
 }
 
 function post-deploy() {
+  #only working when active server is passenger
   if hot_deploy_marker_is_present; then
     echo "Hot deploy marker is present. Touching Passenger restart.txt to trigger redeployment."
     touch ${OPENSHIFT_REPO_DIR}tmp/restart.txt
