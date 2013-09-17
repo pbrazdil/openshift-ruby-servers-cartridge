@@ -6,7 +6,7 @@ function is_server_installed {
 	case $1 in
 		"passenger") 
 			;;
-		"puma"|"thin"|"unicorn")
+		"puma"|"thin"|"unicorn"|"rainbows")
 			gem_exists "$1"
 			;;
 		*)
