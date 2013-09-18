@@ -28,11 +28,11 @@ To take effect you need to either restart your application or deploy your code a
 
 If you are using Gemfile you need to add gem with your selected server. In this case it would be
 
-	```ruby
-	group :production do
-		gem 'puma'
-	end
-	```
+```ruby
+group :production do
+	gem 'puma'
+end
+```
 
 
 
