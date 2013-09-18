@@ -39,13 +39,12 @@ function stop() {
 function restart() {
     echo "${1}ing Ruby cart"
 
-    #if server is changed, we will stop the running server and start newly defined server
+    #if server is changed, we will stop the running server and start newly defined server, otherwise just restart current server
     if [ $OPENSHIFT_SERVER_LATEST_STARTED != $OPENSHIFT_SERVER ]
     then
       stop
       start
     else
-      #restarting server
       pushd $OPENSHIFT_REPO_DIR 1>/dev/null
       ${OPENSHIFT_RUBY_DIR}/servers/${OPENSHIFT_SERVER}/control/restart 
       popd 1>/dev/null
@@ -224,6 +223,7 @@ case "$1" in
   stop)              stop ;;
   restart | reload ) restart $1 ;;
   status)            status ;;
+  server)            server ;;
   tidy)              tidy ;;
   pre-repo-archive)  pre-repo-archive ;;
   pre-build)         pre-build ;;
