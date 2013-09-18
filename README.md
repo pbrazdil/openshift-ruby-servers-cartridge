@@ -1,5 +1,5 @@
 # OpenShift Advanced Ruby Cartridge
-Ruby cartridge, which is used in Openshift, supports by default only passenger server running on Apache. This advanced ruby cartridge allows you to use other popular servers, to be specific puma, unicorn, thin, rainbows and passenger.
+Ruby cartridge, which is used in Openshift, supports by default only passenger server running on Apache. This advanced ruby cartridge allows you to use other popular servers, to be specific **puma**, **unicorn**, **thin**, **rainbows** and **passenger**.
 
 This for example means you can take advantage of websockets or better performance for your specific application.
 
@@ -21,16 +21,18 @@ By default passenger webserver is used. In order to change it we will use new fe
 
 	rhc env set OPENSHIFT_SERVER=puma -a YOUR_APP_NAME
 
-To take effect, you need to either restart your application or deploy your code again. 
+To take effect you need to either restart your application or deploy your code again. 
 
 	rhc app restart YOUR_APP_NAME
 
 
 If you are using Gemfile you need to add gem with your selected server. In this case it would be
 
+	```ruby
 	group :production do
 		gem 'puma'
 	end
+	```
 
 
 
